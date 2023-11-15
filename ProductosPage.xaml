@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMauiApp.ProductosPage"
+             Title="ProductosPage">
+    <VerticalStackLayout
+        BackgroundColor="LightGray">
+        <HorizontalStackLayout
+            BackgroundColor="AliceBlue">
+            <Image 
+                Source="dotnet_bot.png"
+                HeightRequest="140"
+                />
+            <Label 
+                Text="Productos"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Margin="20"
+                FontSize="Large"/>
+        </HorizontalStackLayout>
+
+        <ListView 
+            x:Name="listaProductos"
+            RowHeight="80"
+            >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Image 
+                                Source="dotnet_bot.png" 
+                                HeightRequest="70"   
+                                />
+                            <StackLayout Orientation="Vertical" Padding="10">
+                                <Label 
+                                    Text="{Binding Nombre}"
+                                    VerticalOptions="Start"
+                                    FontSize="20" 
+                                    />
+                                <Label 
+                                    
+                                    Text="{Binding Cantidad}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start"
+                                    FontSize="18"
+                                    />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid RowDefinitions="*,Auto">
+            <VerticalStackLayout Grid.Row="1"
+                         Padding="25">
+                <Button
+                    x:Name="CrearProductoBtn"
+                    Clicked="OnClickNuevoProductoAsync"
+                    Text="Nuevo Producto"
+                    Margin="15"
+                    HorizontalOptions="Fill"
+                />
+                
+            </VerticalStackLayout>
+        </Grid>
+       
+
+    </VerticalStackLayout>
+</ContentPage>

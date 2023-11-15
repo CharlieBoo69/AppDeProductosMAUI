@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMauiApp.NuevoProductoPage"
+             Title="NuevoProductoPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Nuevo Producto"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="20"
+            Padding="10"
+            />
+        <TableView Intent="Form" Margin="10">
+            <TableRoot>
+                <TableSection Title="Ingrese los datos">
+                    <EntryCell 
+                        Placeholder="Nombre"
+                        x:Name="Nombre"
+                        />
+                    <EntryCell 
+                        Placeholder="Descripcion"
+                        x:Name="Descripcion"
+                        />
+                    <EntryCell 
+                        Placeholder="Cantidad"
+                        x:Name="Cantidad"
+                        />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Grid RowDefinitions="*,Auto">
+            <HorizontalStackLayout Grid.Row="1"
+                 Padding="25">
+                <Button
+                    x:Name="CancelarBtn"
+                    Text="Cancelar"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    />
+                <Button
+                    x:Name="GuardarProductoBtn"
+                    Text="Guardar Producto"
+                    Clicked="onClickedGuardar"
+                    Margin="15"
+                    HorizontalOptions="FillAndExpand"
+                    />
+            </HorizontalStackLayout>
+        </Grid>
+
+    </VerticalStackLayout>
+
+</ContentPage>
